@@ -15,3 +15,5 @@ suppressMessages(attach(df_data))
 
 #######################################################################
 #### question 1 i)
+
+model_1_i <- lm(logwage ~ schooling + age + I(age^2))

@@ -3,6 +3,8 @@ author: Students
 title: Assignment 1
 date: 2023-01-06
 date-format: long
+include-in-header: |
+    \usepackage{fancyvrb}
 format:
     pdf:
         toc: false
@@ -17,9 +19,33 @@ format:
         documentclass: article
         papersize: dina4
 ---
+
+```{r, echo=FALSE}
+
+suppressMessages(source("main.r"))
+
+```
+
+
 # Question 1
 
 ## i)
+
+```{r, results='asis', echo=FALSE, fig.pos='H'}
+
+stargazer(
+    model_1_i,
+    header = FALSE,
+    title = "OLS regression for log-earnings on schooling, age, and age squared." ,
+    label = "model1i"
+)
+
+```
+
+From Table \ref{model1i} can be observed that only the intercept and \verb+schooling+ are significant. 
+Both are significant at the $1\%$-significance level.
+For a given worker, an additional year of schooling is associated with a $(e^{0.216} - 1)\,\cdot\,100 \approx 24.11$ increase in wage.
+The intercept and explanatory variables explain $81.5\%$ of the variation in \verb+logwage+.
 
 ## ii)
 
