@@ -9,6 +9,11 @@ format:
         number-sections: true
         number-depth: 2
         colorlinks: true
+        geometry:
+            - top = 30mm
+            - bottom = 30mm
+            - left = 20mm
+            - right = 20mm
         documentclass: article
         papersize: dina4
 ---
