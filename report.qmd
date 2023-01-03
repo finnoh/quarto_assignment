@@ -44,10 +44,16 @@ stargazer(
 
 From Table \ref{model1i} can be observed that only the intercept and \verb+schooling+ are significant. 
 Both are significant at the $1\%$-significance level.
-For a given worker, an additional year of schooling is associated with a $(e^{0.216} - 1)\,\cdot\,100 \approx 24.11$ increase in wage.
+For a given worker, an additional year of schooling is associated with a $(e^{0.216} - 1)\,\cdot\,100 \approx 24.11\%$ increase in wage.
 The intercept and explanatory variables explain $81.5\%$ of the variation in \verb+logwage+.
 
 ## ii)
+
+Low-wage workers may be incentivized to stay at home to take care of their families.
+Then, instead of having a low \verb+logwage+, these workers have missing values for \verb+logwage+.
+As a result, the OLS estimate of the \verb+schooling+ coefficient will be biased downwards, since the measurement of the relationship between \verb+logwage+ and \verb+schooling+ is shifted towards workers who earn higher wages (that is, the slope will decrease). Since a larger sample does not alleviate this problem, the OLS estimates will also be inconsistent.
+
+<!-- formulate sample selection model -->
 
 ## iii)
 
