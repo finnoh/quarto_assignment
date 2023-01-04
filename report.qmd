@@ -42,12 +42,21 @@ stargazer(
 
 ```
 
-From Table \ref{model1i} can be observed that only the intercept and \verb+schooling+ are significant. 
-Both are significant at the $1\%$-significance level.
-For a given worker, an additional year of schooling is associated with a $(e^{0.216} - 1)\,\cdot\,100 \approx 24.11\%$ increase in wage.
-The intercept and explanatory variables explain $81.5\%$ of the variation in \verb+logwage+.
+From Table \ref{model1i} can be observed that only the intercept and \verb+schooling+ are significant. Both are significant at the $1\%$-significance level. For a given worker, an additional year of schooling is associated with a $(e^{0.216} - 1)\,\cdot\,100 \approx 24.11\%$ increase in wage. The intercept and explanatory variables explain $81.5\%$ of the variation in \verb+logwage+.
 
 ## ii)
+
+\verb+logwage+ is only observed when a worker earns a wage.
+
+Let $Z_{i}^{'}$, $\gamma$, and $V_{i}$ denote some exclusion restriction, the corresponding coefficient, and error term for individual $i$, respectively. Then, we have the selection equation
+\begin{align*}
+    I_{i}^{*} = Z_{i}^{'} \gamma + V_{i},
+\end{align*}
+where I_{i} takes value $1$ if the wage for individual $i$ $I_{i}^{*} > 0$, and value $0$ otherwise. In addition, let $Y_{i}^{*}$ denote the latent variable \verb+logwage+, $X_{i}^{'}$ the regressor(s), $\beta$ the coefficient (vector) and $U_{i}$ the error term. The second regression equation is
+\begin{align*}
+    Y_{i}^{*} = X_{i}^{'}\beta + U_{i}.
+\end{align*}
+However, instead of the true \verb+logwage+ $Y_{i}^{*}$ we observe
 
 ## iii)
 
