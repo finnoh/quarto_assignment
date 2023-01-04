@@ -4,12 +4,13 @@ title: Assignment 1
 date: 2023-01-06
 date-format: long
 code-color-bg: lightgray
+header-includes:
+  \usepackage{fancyhdr}
+  \usepackage{fancyvrb}
+
 format:
     pdf:
         documentclass: article
-        include-in-header: |
-            \usepackage{fancyvrb}
-            \usepackage{fancyhdr}
         toc: false
         number-sections: false
         number-depth: 2
@@ -22,11 +23,15 @@ format:
         papersize: dina4
 ---
 
+\pagestyle{fancy}
+
 ```{r, echo=FALSE}
 
 suppressWarnings(suppressMessages(source("main.r")))
 
 ```
+
+
 
 # Question 1
 
