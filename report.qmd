@@ -67,7 +67,45 @@ As a result, the OLS estimate of the \verb+schooling+ coefficient will be biased
 # Question 2
 
 ## i)
+An OLS model of the form \begin{align*}
+    earnings = \beta_0  + \beta_1 \; schooling + \epsilon
+\end{align*}
+
+likely does not yield consistent estimates as the exogeneity assumption $E[\mathbf{X} \boldsymbol{\epsilon}]$ is going to be violated. In this case, the residual contains individual's characteristics such as intelligence, which should both influence the amount of schooling an individual seeks, as well as directly impact the income of an individual.
+
 
 ## ii)
+Table \ref{model2i} displays the results for the different IV models and the OLS estimation. 
+
+Based on the F-statistics of the IV regressions, we would choose the model that only uses the *subsidy* as an instrumental variable, as its F-statistic is the highest out of all 3 IV models, even higher than when using both instrumental variables. As the estimates of these two models seem to be the same, we choose the simpler model which only contains the *subsidy* instrumental variable. Note that *distance* appears to be a weak instrument, as its model's F-statistic is low and its estimates are close to the, likely inconsistent, OLS estimates.
+
+```{r, results='asis', echo=FALSE, fig.pos='H'}
+
+stargazer(
+    model_2_ols,
+    model_2_iv_dist,
+    model_2_iv_subs,
+    model_2_iv_both,
+    add.lines = list(c("IV variable", "-", "distance", "subsidy", "both"),
+    c("F Statistic IV", "-", extract_F_stat(model_2_iv_dist), extract_F_stat(model_2_iv_subs), extract_F_stat(model_2_iv_both))),
+    header = FALSE,
+    title = "Regression for log-earnings on schooling." ,
+    label = "model2i"
+)
+
+```
 
 ## iii)
+
+The OLS results are similar to the results with the IV regression where we use *distance* as an instrumental variable. The estimates for the other two IV regressions differ strongly from the OLS estimates, but are similar to each other.
+
+If there is no endogeneity, than we would use the OLS model, as it is efficient in this context. Assuming that we have valid instruments, we can test for endogeneity by the Hausman test.
+
+We present the results for the Hausman test in Table \ref{tab:hausman}, clearly we cannot reject the Hausman test for the *distance* instrument variable. However, we can reject the Hausman test on $\alpha = 0.05$ for the *subsidy* and for both instrumental variables. 
+
+These results and the theoretical background suggest, that there is an endogeneity problem and that *distance* is a weak instrument. Hence, we would choose the simplest model which seems to address this endogeneity issue, which is the model with the *subsidy* instrument.
+
+```{r, echo=FALSE, fig.pos='H'}
+table_hausman %>% kable(booktabs=TRUE, align = 'c',
+caption = "P-values of Hausman test for the IV models \\label{tab:hausman}") %>% kable_styling(position = "center")
+```
