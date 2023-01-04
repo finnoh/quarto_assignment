@@ -160,7 +160,7 @@ stargazer(
 
 The OLS results are similar to the results with the IV regression where we use *distance* as an instrumental variable. The estimates for the other two IV regressions differ strongly from the OLS estimates, but are similar to each other.
 
-If there is no endogeneity, than we would use the OLS model, as it is efficient in this context. Assuming that we have valid instruments, we can test for endogeneity by using the Hausman test.
+If there is no endogeneity, than we would use the OLS model, as it is efficient in this context. Assuming that we have valid instruments, we can test for endogeneity by performing the Hausman test.
 
 We present the results for the Hausman test in Table \ref{tab:hausman}, clearly we cannot reject the Hausman test for the *distance* instrument variable. However, we can reject the Hausman test on $\alpha = 0.05$ for the *subsidy* and for both instrumental variables. 
 
