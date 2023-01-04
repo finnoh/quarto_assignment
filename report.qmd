@@ -49,12 +49,6 @@ The intercept and explanatory variables explain $81.5\%$ of the variation in \ve
 
 ## ii)
 
-Low-wage workers may be incentivized to stay at home to take care of their families more than high-wage workers.
-Then, instead of having a low \verb+logwage+, these workers have missing values for \verb+logwage+.
-As a result, the OLS estimate of the \verb+schooling+ coefficient will be biased downwards, since the measurement of the relationship between \verb+logwage+ and \verb+schooling+ is shifted towards workers who earn higher wages (i.e., the slope is estimated to be smaller than it truly is). Since a larger sample does not alleviate this problem, the OLS estimates will also be inconsistent.
-
-<!-- formulate sample selection model -->
-
 ## iii)
 
 <!-- "you need to have a variable that explains why they are in the sample but not why they are getting higher wages" -> use economic theory (assumptions); cannot use t-tests on coefficients on SELECTED SAMPLE -->
