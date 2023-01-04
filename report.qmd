@@ -132,7 +132,7 @@ An OLS model of the form \begin{align*}
     earnings = \beta_0  + \beta_1 \; schooling + \epsilon
 \end{align*}
 
-likely does not yield consistent estimates as the exogeneity assumption $E[\mathbf{X} \boldsymbol{\epsilon}]$ is going to be violated. In this case, the residual contains individual's characteristics such as intelligence, which should both influence the amount of schooling an individual seeks, as well as directly impact the income of an individual.
+likely does not yield consistent estimates as the exogeneity assumption $\text{plim}[\mathbf{X} \boldsymbol{\epsilon}] = 0$ is going to be violated. In this case, the residual contains individual's characteristics such as intelligence, which should both influence the amount of schooling an individual seeks, as well as directly impact the income of an individual.
 
 
 ## ii)
