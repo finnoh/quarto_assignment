@@ -8,7 +8,7 @@ include-in-header: |
 format:
     pdf:
         toc: false
-        number-sections: true
+        number-sections: false
         number-depth: 2
         colorlinks: true
         geometry:
