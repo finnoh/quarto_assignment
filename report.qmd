@@ -3,11 +3,13 @@ author: Students
 title: Assignment 1
 date: 2023-01-06
 date-format: long
-include-in-header: |
-    \usepackage{fancyvrb}
 code-color-bg: lightgray
 format:
     pdf:
+        documentclass: article
+        include-in-header: |
+            \usepackage{fancyvrb}
+            \usepackage{fancyhdr}
         toc: false
         number-sections: false
         number-depth: 2
@@ -17,7 +19,6 @@ format:
             - bottom = 30mm
             - left = 20mm
             - right = 20mm
-        documentclass: article
         papersize: dina4
 ---
 
@@ -26,7 +27,6 @@ format:
 suppressWarnings(suppressMessages(source("main.r")))
 
 ```
-
 
 # Question 1
 
