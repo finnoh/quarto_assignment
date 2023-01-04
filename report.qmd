@@ -128,6 +128,7 @@ Table \ref{model1iv1} shows the maximum likelihood estimation where the selectio
 # Question 2
 
 ## i)
+
 An OLS model of the form \begin{align*}
     earnings = \beta_0  + \beta_1 \; schooling + \epsilon
 \end{align*}
@@ -136,6 +137,7 @@ likely does not yield consistent estimates as the exogeneity assumption $\text{p
 
 
 ## ii)
+
 Table \ref{model2i} displays the results for the different IV models and the OLS estimation. 
 
 Based on the F-statistics of the IV regressions, we would choose the model that only uses the *subsidy* as an instrumental variable, as its F-statistic is greater than 10 and the highest out of all 3 IV models, even higher than when using both instrumental variables. As the estimates of these two models seem to be the same, we choose the simpler model which only contains the *subsidy* instrumental variable. Note that *distance* appears to be a weak instrument, as its model's F-statistic is low and its estimates are close to the, likely inconsistent, OLS estimates.
