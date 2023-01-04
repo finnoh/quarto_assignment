@@ -5,6 +5,7 @@ date: 2023-01-06
 date-format: long
 include-in-header: |
     \usepackage{fancyvrb}
+code-color-bg: lightgray
 format:
     pdf:
         toc: false
@@ -22,7 +23,7 @@ format:
 
 ```{r, echo=FALSE}
 
-suppressMessages(source("main.r"))
+suppressWarnings(suppressMessages(source("main.r")))
 
 ```
 
@@ -42,19 +43,78 @@ stargazer(
 
 ```
 
-From Table \ref{model1i} can be observed that only the intercept and \verb+schooling+ are significant. 
-Both are significant at the $1\%$-significance level.
-For a given worker, an additional year of schooling is associated with a $(e^{0.216} - 1)\,\cdot\,100 \approx 24.11\%$ increase in wage.
-The intercept and explanatory variables explain $81.5\%$ of the variation in \verb+logwage+.
+From Table \ref{model1i} can be observed that only the intercept and \verb+schooling+ are significant. Both are significant at the $1\%$-significance level. For a given worker, an additional year of schooling is associated with a $(e^{0.216} - 1)\,\cdot\,100 \approx 24.11\%$ increase in wage. The intercept and explanatory variables explain $81.5\%$ of the variation in \verb+logwage+.
 
 ## ii)
 
+Let $Z_{i}^{'}$, $\gamma$, and $V_{i}$ denote one of the regressors \verb+schooling+, \verb+age+ and \verb+I(age^2)+ or an exclusion restriction (in case of correct specification), the corresponding coefficient, and error term for individual $i$, respectively. Then, we have the selection equation
+\begin{align*}
+    I_{i}^{*} = Z_{i}^{'} \gamma + V_{i},
+\end{align*}
+where $I_{i}$ takes value $1$ if the wage for individual $i$ $I_{i}^{*} > 0$, and value $0$ otherwise. In addition, let $Y_{i}^{*}$ denote the latent variable \verb+logwage+, $X_{i}^{'}$ the regressors, $\beta$ the coefficient vector and $U_{i}$ the error term. The second regression equation is
+\begin{align*}
+    Y_{i}^{*} = X_{i}^{'}\beta + U_{i}.
+\end{align*}
+However, instead of the true \verb+logwage+ $Y_{i}^{*}$ we observe
+\begin{align*}
+    Y_{i} = 
+    \begin{cases}
+        Y_{i}^{*} &\text{ if } I_{i} = 1\\
+        \text{missing} &\text{ if } I_{i} = 0.
+    \end{cases}
+\end{align*}
+
+Hence, \verb+logwage+ is only observed when a worker earns a wage greater than $0$. In the 2-dimensional case (1 regressor), observations are essentially missing at the bottom of the y-axis, which will result in biased OLS estimates when running a regression. Obviously, this problem extends to higher dimensions. Since the problem is not alleviated when obtaining a larger sample, the OLS estimates will also be inconsistent.
+
 ## iii)
 
-<!-- "you need to have a variable that explains why they are in the sample but not why they are getting higher wages" -> use economic theory (assumptions); cannot use t-tests on coefficients on SELECTED SAMPLE -->
-<!-- maybe provide some counterarguments to exclusion restriction  -->
+The exclusion restriction must explain whether observations are in the sample. That is, whether an individual earns a wage. However, the exclusion restriction should not explain variation in \verb+logwage+. Therefore, it can be argued that \verb+married+ is a suitable candidate. Whether an individual is married will not directly affect the (potential) wage they may earn. However, it can affect whether an individual is in the labor force. For example, married individuals may choose not to work to take care of their families. 
+
+```{r, results='asis', echo=FALSE, fig.pos='H'}
+
+stargazer(
+    model_1_iii_1,
+    header = FALSE,
+    title = "Two-step Heckman estimation without exclusion restriction.",
+    label = "model1iii1"
+)
+
+stargazer(
+    model_1_iii_2,
+    header = FALSE,
+    title = "Two-step Heckman estimation with exclusion restriction.",
+    label = "model1iii2"
+)
+
+```
+
+Table \ref{model1iii1} shows the Two-step Heckman estimation where the selection variable $Z^{'}$ is \verb+schooling+, whereas Table \ref{model1iii2} shows the Two-step Heckman estimation where the selection variable $Z^{'}$ is \verb+married+.
+In the first case, where $Z^{'}$ is a variable in $X^{'}$, there is perfect collinearity (due to \verb+schooling+) in the second step of the estimation. As a consequence, the standard error of \verb+schooling+ is \verb+Inf+, and is not reported.
+In the second step, where an appropriate exclusion restriction is used, both the coefficients and the standard errors are obtained.
+
 
 ## iv)
+
+```{r, results='asis', echo=FALSE, fig.pos='H'}
+
+stargazer(
+    model_1_iv_1,
+    header = FALSE,
+    title = "Maximum likelihood estimation without exclusion restriction.",
+    label = "model1iv1"
+)
+
+stargazer(
+    model_1_iv_2,
+    header = FALSE,
+    title = "Maximum likelihood estimation with exclusion restriction.",
+    label = "model1iv2"
+)
+
+```
+
+Table \ref{model1iv1} shows the maximum likelihood estimation where the selection variable $Z^{'}$ is \verb+schooling+, whereas Table \ref{model1iv2} shows the maximum likelihood estimation where the selection variable $Z^{'}$ is \verb+married+. From the tables, we draw the same conclusion as in iii). However, for the maximum likelihood estimation all standard errors are reported to be \verb+Inf+ when the selection variable $Z{'}$ is \verb+schooling+, instead of only the standard error of \verb+schooling+.
+
 
 ## v)
 
