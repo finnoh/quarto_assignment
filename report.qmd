@@ -64,7 +64,7 @@ However, instead of the true \verb+logwage+ $Y_{i}^{*}$ we observe
     \end{cases}
 \end{align*}
 
-Hence, \verb+logwage+ is only observed when a worker earns a wage greater than $0$. Observations are essentially missing at the bottom of the y-axis, which will result in biased OLS estimates when running a regression. Since the problem is not alleviated when obtaining a larger sample, the OLS estimates will also be inconsistent.
+Hence, \verb+logwage+ is only observed when a worker earns a wage greater than $0$. In the 2-dimensional case (1 regressor), observations are essentially missing at the bottom of the y-axis, which will result in biased OLS estimates when running a regression. Obviously, this problem extends to higher dimensions. Since the problem is not alleviated when obtaining a larger sample, the OLS estimates will also be inconsistent.
 
 ## iii)
 
