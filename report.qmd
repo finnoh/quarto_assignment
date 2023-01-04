@@ -5,6 +5,7 @@ date: 2023-01-06
 date-format: long
 include-in-header: |
     \usepackage{fancyvrb}
+    \usepackage{float}
 code-color-bg: lightgray
 format:
     pdf:
@@ -118,6 +119,8 @@ Table \ref{model1iv1} shows the maximum likelihood estimation where the selectio
 
 ## v)
 
+
+
 # Question 2
 
 ## i)
@@ -131,7 +134,7 @@ likely does not yield consistent estimates as the exogeneity assumption $E[\math
 ## ii)
 Table \ref{model2i} displays the results for the different IV models and the OLS estimation. 
 
-Based on the F-statistics of the IV regressions, we would choose the model that only uses the *subsidy* as an instrumental variable, as its F-statistic is the highest out of all 3 IV models, even higher than when using both instrumental variables. As the estimates of these two models seem to be the same, we choose the simpler model which only contains the *subsidy* instrumental variable. Note that *distance* appears to be a weak instrument, as its model's F-statistic is low and its estimates are close to the, likely inconsistent, OLS estimates.
+Based on the F-statistics of the IV regressions, we would choose the model that only uses the *subsidy* as an instrumental variable, as its F-statistic is greater than 10 and the highest out of all 3 IV models, even higher than when using both instrumental variables. As the estimates of these two models seem to be the same, we choose the simpler model which only contains the *subsidy* instrumental variable. Note that *distance* appears to be a weak instrument, as its model's F-statistic is low and its estimates are close to the, likely inconsistent, OLS estimates.
 
 ```{r, results='asis', echo=FALSE, fig.pos='H'}
 
@@ -153,7 +156,7 @@ stargazer(
 
 The OLS results are similar to the results with the IV regression where we use *distance* as an instrumental variable. The estimates for the other two IV regressions differ strongly from the OLS estimates, but are similar to each other.
 
-If there is no endogeneity, than we would use the OLS model, as it is efficient in this context. Assuming that we have valid instruments, we can test for endogeneity by the Hausman test.
+If there is no endogeneity, than we would use the OLS model, as it is efficient in this context. Assuming that we have valid instruments, we can test for endogeneity by using the Hausman test.
 
 We present the results for the Hausman test in Table \ref{tab:hausman}, clearly we cannot reject the Hausman test for the *distance* instrument variable. However, we can reject the Hausman test on $\alpha = 0.05$ for the *subsidy* and for both instrumental variables. 
 
