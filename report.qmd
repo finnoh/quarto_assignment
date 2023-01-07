@@ -118,7 +118,7 @@ stargazer(
 
 ```
 
-Table \ref{model1iv1} shows the maximum likelihood estimation where the selection variable $Z^{'}$ is \verb+schooling+, whereas Table \ref{model1iv2} shows the maximum likelihood estimation where the selection variable $Z^{'}$ is \verb+married+. From the tables, we draw the same conclusion as in iii). However, for the maximum likelihood estimation all standard errors are reported to be \verb+Inf+ when the selection variable $Z{'}$ is \verb+schooling+, instead of only the standard error of \verb+schooling+.
+Table \ref{model1iv1} shows the maximum likelihood estimation where the selection variable $Z^{'}$ is \verb+schooling+, whereas Table \ref{model1iv2} shows the maximum likelihood estimation where the selection variable $Z^{'}$ is \verb+married+. From the tables, we draw the same conclusion as in iii). However, for the maximum likelihood estimation all standard errors are reported to be \verb+Inf+ when the selection variable $Z{'}$ is \verb+schooling+, instead of only the standard error of \verb+schooling+. When an appropriate inclusion restriction is used, the standard errors for the Heckman estimation and maximum likelihood estimation are equivalent. Since maximum likelihood estimation ignores heteroskedasticity, the equivalence of the standard errors indicates homoskedasticity.
 
 
 ## v)
