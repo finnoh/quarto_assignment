@@ -123,7 +123,7 @@ Table \ref{model1iv1} shows the maximum likelihood estimation where the selectio
 
 ## v)
 
-The OLS estimates are nearly equivalent to the two-step estimates. We also have that $\rho$ is close to zero in the two-step estimation. Together, this indicates that we can use OLS instead of the two-step estimation, since OLS is more efficient.
+The OLS estimates are nearly equivalent to the two-step estimates. We also have that $\rho$ is close to zero in the two-step estimation. This indicates independence of $U_{i}$ and $V_{i}$ (random sampling). Thus, we should use OLS instead of the two-step estimation, since OLS is more efficient.
 
 
 # Question 2
