@@ -31,3 +31,16 @@ bibliography: references.bib
 suppressWarnings(suppressMessages(source("main.r")))
 
 ```
+
+\newpage
+# Code
+Below, you can find the code for this project.
+
+### main.r script
+```{r, file = "main.r", echo=TRUE, eval=FALSE}
+
+```
+### toolbox.r script
+```{r, file = "./dev/toolbox.r", echo=TRUE, eval=FALSE}
+
+```
