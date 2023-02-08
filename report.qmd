@@ -15,7 +15,7 @@ format:
         number-sections: false
         number-depth: 2
         colorlinks: true
-        fig-pos: h
+        fig-pos: 'H'
         fig-align: center
         geometry:
             - top = 30mm
@@ -39,7 +39,8 @@ suppressWarnings(suppressMessages(source("main.r")))
 
 ```
 
-\newpage
+{{< pagebreak >}}
+
 # Code
 Below, you can find the code for this project.
 
