@@ -2,6 +2,6 @@
 if (!require(pacman)) {
     install.packages("pacman")
 }
-pacman::p_load(tidyverse)
+pacman::p_load(tidyverse, ggpubr)
 
 # Functions -----------------------------------------
