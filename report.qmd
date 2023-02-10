@@ -8,6 +8,11 @@ header-includes:
   \usepackage{fancyhdr}
   \usepackage{fancyvrb}
   \usepackage{float}
+  \usepackage{booktabs}
+  \usepackage{lscape}
+  \usepackage{cleveref}
+  \usepackage{amsmath}
+  \usepackage{graphicx}
 format:
     pdf:
         documentclass: article
