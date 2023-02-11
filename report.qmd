@@ -13,6 +13,7 @@ header-includes:
   \usepackage{cleveref}
   \usepackage{amsmath}
   \usepackage{graphicx}
+pdf-engine: pdflatex
 format:
     pdf:
         documentclass: article
@@ -28,12 +29,13 @@ format:
             - left = 20mm
             - right = 20mm
         papersize: dina4
-bibliography: references.bib
+bibliography: [references.bib, packages.bib]
 echo: false
 eval: true
 messages: false
 error: false
 warning: false
+nocite: '@*'
 ---
 
 \pagestyle{fancy}
