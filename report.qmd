@@ -10,7 +10,6 @@ header-includes:
   \usepackage{float}
   \usepackage{booktabs}
   \usepackage{lscape}
-  \usepackage{cleveref}
   \usepackage{amsmath}
   \usepackage{graphicx}
   \usepackage{algorithm}
@@ -63,3 +62,5 @@ Below, you can find the code for this project.
 ```{r, file = "./dev/toolbox.r", echo=TRUE, eval=FALSE}
 
 ```
+
+# References
