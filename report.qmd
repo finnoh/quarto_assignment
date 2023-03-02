@@ -13,6 +13,9 @@ header-includes:
   \usepackage{cleveref}
   \usepackage{amsmath}
   \usepackage{graphicx}
+  \usepackage{algorithm}
+  \usepackage{algpseudocode}
+  \DeclareMathOperator*{\argmin}{arg\,min}
 pdf-engine: pdflatex
 format:
     pdf:
@@ -43,6 +46,7 @@ nocite: '@*'
 ```{r, echo=FALSE}
 
 suppressWarnings(suppressMessages(source("main.r")))
+suppressWarnings(suppressMessages(knitr::write_bib(c(.packages(), "bookdown"), "packages.bib")))
 
 ```
 
