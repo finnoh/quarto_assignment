@@ -5,7 +5,7 @@ if (!require(pacman)) {
 pacman::p_load(tidyverse, ggpubr, kableExtra)
 
 # common theme to add to all ggplot plots
-mytheme <- theme(legend.position = "bottom") + theme_bw()
+mytheme <-  theme_bw() + theme(legend.position = "bottom")
 # create a common format for all your tables
 create_table <- function(df){
     df |>
