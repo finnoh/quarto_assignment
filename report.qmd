@@ -1,7 +1,7 @@
 ---
 author: Students
 title: Assignment 1
-date: today
+date: last-modified
 date-format: long
 code-color-bg: lightgray
 header-includes:
