@@ -15,7 +15,7 @@ header-includes:
   \usepackage{algorithm}
   \usepackage{algpseudocode}
   \DeclareMathOperator*{\argmin}{arg\,min}
-pdf-engine: pdflatex
+pdf-engine: xelatex
 format:
     pdf:
         documentclass: article
